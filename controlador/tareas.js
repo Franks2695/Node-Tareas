@@ -64,10 +64,10 @@ const actualizar = (descripcion, completado = true) => {
         tareasPorHacer[index].completado = completado;
         guardarDatos();
         console.log('');
-        return 'Tarea completada'.green;
+        return 'Tarea completada exitosamente'.green;
     }
     console.log('');
-    return 'No existe la tarea'.red;
+    return 'No existe la tarea, porfavor actualice una tarea existente'.red;
 }
 
 const eliminar = (descripcion) => {
@@ -90,10 +90,10 @@ const eliminar = (descripcion) => {
         tareasPorHacer.splice(index, 1);
         guardarDatos();
         console.log('');
-        return 'Tarea eliminada'.bgGreen;
+        return 'Tarea eliminada exitosamente'.bgGreen;
     }
     console.log('');
-    return 'No existe la tarea'.bgRed;
+    return 'No existe la tarea,  porfavor actualice una tarea existente'.bgRed;
 }
 
 module.exports = {
