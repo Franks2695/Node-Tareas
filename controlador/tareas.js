@@ -28,11 +28,16 @@ const crear = (descripcion) => {
         completado: false
     }
 
-    tareasPorHacer.push(tarea);
+    let duplicado = tareasPorHacer.filter(tarea => tarea.descripcion === descripcion);
 
-    guardarDatos();
-
-    return tarea;
+    if (duplicado >= 0) {
+        tareasPorHacer.push(tarea);
+        guardarDatos();
+        console.log('');
+        return tarea;
+    }
+    console.log('');
+    return 'Ya existe esta tarea, no es posible crearla. Porfavor ingrese otra tarea'.yellow;
 }
 
 const listar = () => {
@@ -93,7 +98,7 @@ const eliminar = (descripcion) => {
         return 'Tarea eliminada exitosamente'.bgGreen;
     }
     console.log('');
-    return 'No existe la tarea,  porfavor actualice una tarea existente'.bgRed;
+    return 'No existe la tarea,  porfavor elimine una tarea existente'.bgRed;
 }
 
 module.exports = {
