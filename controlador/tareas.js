@@ -49,7 +49,7 @@ const listar = () => {
             console.log("--------------------------");
         } else {
             console.log(tarea.descripcion);
-            console.log(chalk.rgb(254, 80, 0)('Estado:', tarea.completado));
+            console.log(chalk.rgb(254, 80, 10)('Estado:', tarea.completado));
             console.log("--------------------------");
         }
     }
